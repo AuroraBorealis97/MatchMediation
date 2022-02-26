@@ -1,14 +1,43 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, jsonify, redirect
 
 app = Flask(__name__) #name of module
+
+registered_users = 'users.txt'
 
 #what we type into our browser to go to different pages
 @app.route("/") #home page
 def welcome():
     return render_template('registration.html') #name of home html file --> will change as front end is developed
 
-@app.route("/parent") #parent sign up page
+@app.route("/parent", methods =["GET", "POST"]) #parent sign up page
 def parent():
+    if request.method == "POST":
+        first_name = request.form.get("fname")
+        last_name = request.form.get("lname")
+        password = request.form.get("password")
+        email = request.form.get("email")
+        phone = request.form.get("number")
+
+
+        open_dict =",{ "
+        user_info = "'fname': '{}','lname': '{}', 'password': '{}', 'email': '{}','phone': '{}'".format(first_name, last_name, password, email, phone)
+        closing_dict = "}\\n"
+
+        new_user = open_dict + user_info + closing_dict
+
+        #print(new_user)
+
+        file = open(registered_users, 'a+')
+        file.write(new_user)
+        file.seek(0)
+        registered = file.readlines()
+        file.close()
+
+        # for users in registered:
+        #     print(users.strip())
+        return redirect("/") #redirect to page after sign-up here
+
+
     return render_template('parent.html')
 
 if __name__ == '__main__':
