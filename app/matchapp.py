@@ -71,6 +71,11 @@ def supervisor():
         registered = file.readlines()
         file.close()
 
+        file = open("supervisors.txt", 'a+')
+        file.write(new_user)
+        file.seek(0)
+        file.close()
+
         # for users in registered:
         #     print(users.strip())
         print("supervisor 1st part added successfully")
@@ -123,6 +128,11 @@ def home():
 
 @app.route("/supervisors", methods =["GET", "POST"])
 def supervisors():
+
+    file = open("supervisors.txt", "r")
+    supers = file.openlines()
+    file.close()
+
     return render_template('supervisors.html')
 
 @app.route("/resources", methods =["GET", "POST"])
