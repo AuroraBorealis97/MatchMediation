@@ -8,6 +8,8 @@ logged_in_user_info = ""
 
 search_filter = ""
 
+search_query = ""
+
 #what we type into our browser to go to different pages
 @app.route("/") #home page
 def welcome():
@@ -78,10 +80,6 @@ def supervisor():
 
     return render_template('supervisor.html')
 
-@app.route("/supervisors", methods =["GET", "POST"])
-def supervisors():
-    return render_template('supervisors.html')
-
 @app.route("/login", methods =["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -117,27 +115,44 @@ def login():
 
     return render_template("login.html")
 
+''' all webpages under this comment are available after successful login'''
+
 @app.route("/home", methods =["GET", "POST"])
 def home():
     return render_template('index.html')
 
+@app.route("/supervisors", methods =["GET", "POST"])
+def supervisors():
+    return render_template('supervisors.html')
+
 @app.route("/resources", methods =["GET", "POST"])
 def resources():
-
+    if request.method == "POST":
+        global search_query
+        search = request.form.get("search")
 
 
     return render_template('resources.html')
 
 @app.route("/education", methods =["GET", "POST"])
 def education():
+    if request.method == "POST":
+        global search_query
+        search = request.form.get("search")
     return render_template('education.html')
 
 @app.route("/custody", methods =["GET", "POST"])
 def custody():
+    if request.method == "POST":
+        global search_query
+        search = request.form.get("search")
     return render_template('custody.html')
 
 @app.route("/laws", methods =["GET", "POST"])
 def laws():
+    if request.method == "POST":
+        global search_query
+        search = request.form.get("search")
     return render_template('laws.html')
 
 
