@@ -4,7 +4,7 @@ app = Flask(__name__) #name of module
 
 registered_users = 'users.txt'
 
-
+logged_in_user_info = ""
 
 #what we type into our browser to go to different pages
 @app.route("/") #home page
@@ -14,6 +14,7 @@ def welcome():
 @app.route("/parent", methods =["GET", "POST"]) #parent sign up page
 def parent():
     if request.method == "POST":
+        global logged_in_user_info
         first_name = request.form.get("fname")
         last_name = request.form.get("lname")
         password = request.form.get("password")
@@ -36,6 +37,7 @@ def parent():
 
         # for users in registered:
         #     print(users.strip())
+        logged_in_user_info = new_user
         return redirect("/home") #redirect to page after sign-up here
 
 
@@ -44,6 +46,7 @@ def parent():
 @app.route("/supervisor", methods =["GET", "POST"])
 def supervisor():
     if request.method == "POST":
+        global logged_in_user_info
         first_name = request.form.get("fname")
         last_name = request.form.get("lname")
         password = request.form.get("password")
@@ -67,13 +70,20 @@ def supervisor():
         # for users in registered:
         #     print(users.strip())
         print("supervisor 1st part added successfully")
+        logged_in_user_info = new_user
+
         return redirect("/home") #redirect to page after sign-up here
 
     return render_template('supervisor.html')
 
+@app.route("/supervisors", methods =["GET", "POST"])
+def supervisors():
+    return render_template('supervisors.html')
+
 @app.route("/login", methods =["GET", "POST"])
 def login():
     if request.method == "POST":
+        global logged_in_user_info
         email = request.form.get("email")
         password = request.form.get("password")
 
@@ -92,6 +102,7 @@ def login():
             if ast.literal_eval(user_info)["email"] == email:
                 if ast.literal_eval(user_info)['password'] == password:
                     exists = True
+                    logged_in_user_info = user
 
         file.close()
         if exists == False:
@@ -99,6 +110,7 @@ def login():
             return redirect("/login") #page to go to if login is incorrect
 
         print("login correct")
+
         return redirect("/home") #page to go to if login is successful
 
     return render_template("login.html")
