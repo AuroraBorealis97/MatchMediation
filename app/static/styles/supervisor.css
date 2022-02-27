@@ -1,0 +1,147 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'open sans', sans-serif;
+}
+
+/*flex box for main*/
+
+main{
+    display: flex;
+}
+
+
+
+
+/*design side*/
+
+.design{
+    margin-right: 30px;
+    background-image: url('../images/Group\ 4.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 1024px;
+    max-width: 540px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.design h1{
+    font-weight: 600;
+    font-size: 3.375rem;
+    z-index: 1;
+    margin-left:20px
+}
+
+.design h4{
+    font-weight: 400;
+    font-size: 1.625rem;
+    text-align: left;
+    margin: 0 0 0 20px;
+}
+
+
+/*Content*/
+
+.content{
+    z-index: 1;
+}
+
+.content a {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 44px;
+}
+
+label{
+    font-size: 24px;
+    font-weight: 600;
+    display: block;
+   
+}
+
+input{
+    width: 394px;
+    height: 63px;
+    border-radius: 11.71px;
+    border: solid 1.55px #cfcfcf;
+    margin-bottom: 30px;
+}
+
+
+
+input#subscribe, input#agree{
+    width: 34.94px;
+    height: 34.94px;
+    margin-bottom: 25px;
+}
+
+.side1{
+    margin-right: 10px;
+}
+
+.box{
+    display: flex;
+}
+
+.checkbox label{
+    display: inline-block;
+    margin: 0;
+}
+
+.button{
+   width: 100%;
+}
+
+button{
+    width: 507.86px;
+    height: 72.22px;
+    border: none;
+    background-color: #7271bd;
+    color: white;
+    font-weight: 600;
+    font-size: 27.96px;
+    text-decoration: none;
+    margin: 50px auto 0 auto;
+    display: block;
+    box-shadow: 0px 4.31018px 5.7469px 1.43673px #CECECE;
+    border-radius: 11.4938px;
+    cursor: pointer;
+}
+
+p{
+    margin-left: 20%;
+    font-size: 20.19px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+}
+
+.progress{
+    margin: 0 auto;
+    width: 145px;
+}
+
+.circle{
+    display: inline-block;
+    margin: 25px 5px 0 5px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #7271BD;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.active{
+    background-color: #7271BD;
+}
