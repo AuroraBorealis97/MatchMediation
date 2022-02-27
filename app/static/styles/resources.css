@@ -10,6 +10,7 @@ main{
     display: flex;
     flex-direction: column;
 }
+/*resource page*/
 
 /*top*/
 
@@ -102,7 +103,7 @@ span{
     justify-content: center;
 }
 
-.bottom div{
+.bottom div.box{
     margin: 5% 0;
     width: 40%;
     height: 350px;
@@ -156,4 +157,95 @@ text-align: center;
 color: #FFFFFF;
 max-width: 425px;
 margin: 0 auto;
+}
+
+/*Education page*/
+
+/*top*/
+
+.back a{
+    position: absolute;
+    width: 103px;
+    height: 36px;
+    left: 31px;
+    top: 25px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+/*bottom*/
+
+#resource-1, #resource-2{
+    border: 2px solid #D7D7D7;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 3.31429px 3.31429px rgba(220, 220, 220, 0.53));
+    border-radius: 4.14286px;
+    width: 1216px;
+    height: 199px;
+    margin: 60px auto 0 auto;
+}
+
+#resource-2{
+    margin-bottom: 60px;
+}
+
+#education{
+    flex-direction: column;
+}
+
+.h4{
+    font-weight: 700;
+    font-size: 26px;
+    margin: 30px 0 0 0;
+
+}
+
+.h5{
+
+    font-size: 18px;
+    line-height: 25px;
+    color: #202020;
+    margin: 0 0 30px 0;
+}
+
+p{
+    font-size: 20px;
+    line-height: 27px;
+    color: #848484;
+}
+
+.pic img{
+    border-radius: 50%;
+    width: 89.43px;
+    height: 89.43px;
+    float: left;
+    margin: 50px 50px 0 20px;
+
+}
+
+.post-identifier p{
+background: #FFFFFF;
+border: 2px solid #D7D7D7;
+box-sizing: border-box;
+border-radius: 3.7472px;
+padding: 5px 10px;
+display: inline-block;
+font-weight: 600;
+font-size: 20px;
+line-height: 27px;
+color: #4B49AF;
+margin-right: 5px;
+}
+
+#resource-1 .post-identifier{
+    position: absolute;
+    left: 950px;
+    top: -25px;
+}
+
+#resource-2 .post-identifier{
+    position: absolute;
+    left: 900px;
+    top: -25px;
 }
