@@ -1,0 +1,1 @@
+'{"fname": "Karina", "lname": "Ngyuen", "password": "1234", "email": "karina@email.com", "phone": "1234", "acct_type": "supervisor"}'

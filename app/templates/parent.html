@@ -13,16 +13,16 @@
     <main>
 
         <div class="design">
-    
+
             <h1>Welcome to MatchMediation!</h1>
             <h4>Create an account to get started.</h4>
-            
+
         </div>
         <div class="content">
-            <a href="registration.html"> &lt back </a>
+            <a href="/"> &lt back </a>
             <h2>Parent Sign Up</h2>
             <div class="form">
-                <form action="">
+                <form action="{{ url_for("parent")}}" method="post">
                     <div class="box">
                         <div class="side1">
                         <label for="fname">First name</label>
@@ -36,14 +36,14 @@
 
                      </div>
                      <div class="side2">
-                         
-                        <label for="lname">Last name</label> 
+
+                        <label for="lname">Last name</label>
                         <input type="text" name="lname" id="lname" required/>
-                        
-                        <label for="cpassword">Confrim password</label>
-                        <input type="password" name="cpassword" id="cpassword"required />
-                    
-                    
+
+                        <label for="cpassword">Confirm password</label>
+                        <input type="password" name="cpassword" id="cpassword" required />
+
+
                         <label for="number">Phone number</label>
                         <input type="tel" name="number" id="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  required />
                      </div>
@@ -55,15 +55,15 @@
                         <label for="agree">I agree to the <a href="">terms & conditions</a></label>
                     </div><!--checkbox-->
                     <div class="button">
-                        <input id="submit" type="button" value="Sign Up">
+                        <input id="submit" type="submit" value="Sign Up">
                     </div>
                 </form>
-                
+
             </div>
-            <p>Already have an account? <a href="" >Log in</a></p>
+            <p>Already have an account? <a href="/login" >Log in</a></p>
         </div>
     </main>
 
-    
+
 </body>
 </html>
