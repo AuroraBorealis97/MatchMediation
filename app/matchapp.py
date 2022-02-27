@@ -1,5 +1,5 @@
+import ast
 from flask import Flask, render_template, url_for, request, jsonify, redirect
-
 app = Flask(__name__) #name of module
 
 registered_users = 'users.txt'
@@ -16,12 +16,12 @@ def parent():
         last_name = request.form.get("lname")
         password = request.form.get("password")
         email = request.form.get("email")
-        phone = request.form.get("number")
+        phone = request.form.get("number").replace("-", "")
 
 
-        open_dict =",{ "
-        user_info = "'fname': '{}','lname': '{}', 'password': '{}', 'email': '{}','phone': '{}'".format(first_name, last_name, password, email, phone)
-        closing_dict = "}\\n"
+        open_dict ="\'{ "
+        user_info = "\"fname\": \"{}\",\"lname\": \"{}\", \"password\": \"{}\", \"email\": \"{}\",\"phone\": \"{}\"".format(first_name, last_name, password, email, phone)
+        closing_dict = "}\'\n"
 
         new_user = open_dict + user_info + closing_dict
 
@@ -39,6 +39,38 @@ def parent():
 
 
     return render_template('parent.html')
+
+@app.route("/login", methods =["GET", "POST"])
+def login():
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        file = open(registered_users, 'r')
+        registered = file.readlines()
+
+        exists = False
+        for user in registered:
+            if exists == True:
+                file.close()
+                break
+
+            user = str(user)
+            user_info = ast.literal_eval(user)
+
+            if ast.literal_eval(user_info)["email"] == email:
+                if ast.literal_eval(user_info)['password'] == password:
+                    exists = True
+
+        file.close()
+        if exists == False:
+            print("login incorrect")
+            return redirect("/parent") #page to go to if login is incorrect
+
+        print("login correct")
+        return redirect("/") #page to go to if login is successful
+
+    return render_template("login.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

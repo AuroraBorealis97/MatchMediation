@@ -1,1 +1,2 @@
-{'fname': 'Alex','lname': 'Bluesy','password': '1234','email': 'email@email.com','phone': '1234'}\n,{ 'fname': 'aaa','lname': 'aaa', 'password': '123', 'email': 'alexmeng99@gmail.com','phone': '408-425-9332'}\n
+'{"fname": "Alex", "lname": "Bluesy", "password": "1234", "email": "email@email.com", "phone": "1234"}'
+'{ "fname": "aaa","lname": "aaa", "password": "1234", "email": "alexmeng99@gmail.com","phone": "4084259332"}'

@@ -13,8 +13,8 @@
         <div class="content">
             <div class="box">
             <h2>Log in</h2>
-            <form action="">
-                
+            <form action="{{ url_for("login")}}" method="post">
+
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" />
 
@@ -25,9 +25,9 @@
                     <label id="display" for="save">Remember me</label>
                     <a href="" class="reset">forgot password?</a>
                   </div>
-                    
 
-                    <input id="submit" type="button" value="Log in" />
+
+                    <input id="submit" type="submit" value="Log in" />
             </form>
             <p>Don't have an account? <a href="">Sign up</a></p>
 
@@ -40,8 +40,8 @@
         </div>
 
         </div>
-        
+
     </main>
-    
+
 </body>
 </html>
