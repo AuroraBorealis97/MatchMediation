@@ -44,13 +44,16 @@ main{
 }
 
 .title h3{
-    width: 425px;
     height: 50px;
     color: white;
     font-weight: 600;
     font-size: 36px;
     line-height: 49px;
     margin: 40px auto;
+}
+
+.title{
+    text-align: center;
 }
 
 input{
@@ -179,7 +182,8 @@ margin: 0 auto;
 #resource-1, #resource-2{
     border: 2px solid #D7D7D7;
     box-sizing: border-box;
-    filter: drop-shadow(0px 3.31429px 3.31429px rgba(220, 220, 220, 0.53));
+    filter: drop-shadow(0px 4.31429px 4.31429px rgba(220, 220, 220, 0.53));
+    box-shadow: 0px 4.31429px 4.31429px rgba(220, 220, 220, 0.53);
     border-radius: 4.14286px;
     width: 1216px;
     height: 199px;
@@ -248,4 +252,19 @@ margin-right: 5px;
     position: absolute;
     left: 900px;
     top: -25px;
+}
+
+.article-date{
+    float: right;
+    margin: 30px 40px 0 0;
+}
+
+/*Custody laws page*/
+
+div.laws .h4, div.laws .h5, div.laws .p{
+    margin-left: 50px;
+}
+.date{
+    float: right;
+    margin: -30px 40px 0 0;
 }
