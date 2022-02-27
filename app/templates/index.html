@@ -5,26 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    'arvo': ['Arvo', 'serif'],
+                    'open-sans': ['Open Sans', 'sans-serif']
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <h2 class="text-[#4B49AF] font-serif text-3xl">MatchMediation.</h2>
-        <nav class="text-2xl">
-            <a href="#">Home</a>
+<body class="font-open-sans">
+    <header class="flex justify-around py-8 font-light">
+        <h2 class="text-[#4B49AF] font-arvo text-3xl">MatchMediation.</h2>
+        <nav class="text-2xl flex gap-20">
+            <a href="#" class="font-semibold text-[#7271BD]">Home</a>
             <a href="/supervisors">Find Supervisors</a>
             <a href="/resources">Resources</a>
             <a href="/messages">Messages</a>
             <a href="/profile">Profile</a>
         </nav>
     </header>
-    <main>
-        <section>
-            <h1>Connecting Chicago families</h1>
-            <p>MatchMediation is committed to helping Chicago families with child custody by pairing them up with third party supervisors who assist in providing a positive environment for supervised visits.</p>
-            <button>Find a supervisor</button>
+    <main class="px-24">
+        <section class="w-1/2">
+            <h1 class="text-5xl font-bold py-8">Connecting Chicago families</h1>
+            <p class="text-2xl text-[#202020] leading-[48px]">MatchMediation is committed to helping Chicago families with child custody by pairing them up with third party supervisors who assist in providing a positive environment for supervised visits.</p>
+            <button class="p-4 rounded-full border-4 border-[#7271BD]">Find a supervisor</button>
         </section>
-        <section>
+        <section class="w-1/2">
             <img/>
         </section>
     </main>
