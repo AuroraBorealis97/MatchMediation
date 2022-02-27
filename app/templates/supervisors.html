@@ -31,18 +31,52 @@
             <a href="/profile">Profile</a>
         </nav>
     </header>
-    <section>
-        <h1>Let us help you find a supervisor!</h1>
-        <input>
-        <select></select>
-        <select></select>
-        <select></select>
+    <section class="flex flex-col gap-8 py-12 text-center" style="background: center/ cover no-repeat url('../static/images/Group\ 3.png')">
+        <h1 class="text-3xl font-semibold">Let us help you find a supervisor!</h1>
+        <input type="search" placeholder="🔎 Search" class="w-1/4 px-4 py-3 m-auto border-2 border-gray-300 rounded-md">
+        <section class="text-gray-500">
+            <select name="type" class="mr-4 bg-gray-50 w-1/6 px-4 py-2 rounded-md border-2 border-[#B5A5F3]">
+                <option value="">Type of Supervision</option>
+            </select>
+            <select name="availability" class="mr-4 bg-gray-50 w-1/6 px-4 py-2 rounded-md border-2 border-[#B5A5F3]">
+                <option value="">Availability</option>
+            </select>
+            <select name="Cost" class="bg-gray-50 w-1/6 px-4 py-2 rounded-md border-2 border-[#B5A5F3]">
+                <option value="">Cost</option>
+            </select>
+        </section>
     </section>
 
-    <!-- SUPERVISORS -->
-
-    <section>
-        
+    <!-- SUPERVISORS (with people examples) -->
+    <section class="flex flex-col items-center gap-4 py-10">
+        <section class="flex justify-between w-7/12 px-8 py-10 border-2 border-gray-200 rounded-sm shadow-md">
+            <div class="flex gap-10">
+                <img src="../static/images/model-5974522_960_720.jpg" alt="a person in nature, looking away from the camera" class="w-20 h-20 rounded-full shadow-lg" />
+                <section>
+                    <h2 class="text-xl font-semibold">Joel Fernandez</h2>
+                    <span class="block py-4">Free Supervision</span>
+                    <span class="text-lg font-semibold text-green-500">Available Now! 🟢</span>
+                </section>
+            </div>
+            <section>
+                <button class="bg-[#7271BD] rounded-full px-8 py-1 mr-4 text-gray-50 text-lg hover:scale-105 hover:shadow-md transform transition ease-in duration-100">Reserve</button>
+                <button class="border-2 border-[#7271BD] rounded-full px-8 py-1 text-[#7271BD] text-md hover:bg-[#E1E0F1] transition ease-in duration-100">Message</button>
+            </section>
+        </section>
+        <section class="flex justify-between w-7/12 px-8 py-10 border-2 border-gray-200 rounded-sm shadow-md">
+            <div class="flex gap-10">
+                <img src="../static/images/indian-woman-6960082_960_720.jpg" alt="a person with their left hand on their cheek, wearing a clothing piece made of wool" class="w-20 h-20 rounded-full shadow-lg" />
+                <section>
+                    <h2 class="text-xl font-semibold">Judith Kaur</h2>
+                    <span class="block py-4">$17 to $22 per hour</span>
+                    <span class="text-lg font-semibold">Next Availability: Mon. 7am - 12pm</span>
+                </section>
+            </div>
+            <section>
+                <button class="bg-[#7271BD] rounded-full px-8 py-1 mr-4 text-gray-50 text-lg hover:scale-105 hover:shadow-md transform transition ease-in duration-100">Reserve</button>
+                <button class="border-2 border-[#7271BD] rounded-full px-8 py-1 text-[#7271BD] text-md hover:bg-[#E1E0F1] transition ease-in duration-100">Message</button>
+            </section>
+        </section>
     </section>
 </body>
 </html>
