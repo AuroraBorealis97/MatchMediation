@@ -18,7 +18,6 @@ def parent():
         email = request.form.get("email")
         phone = request.form.get("number").replace("-", "")
 
-
         open_dict ="\'{ "
         user_info = "\"fname\": \"{}\",\"lname\": \"{}\", \"password\": \"{}\", \"email\": \"{}\",\"phone\": \"{}\"".format(first_name, last_name, password, email, phone)
         closing_dict = "}\'\n"
@@ -35,7 +34,7 @@ def parent():
 
         # for users in registered:
         #     print(users.strip())
-        return redirect("/") #redirect to page after sign-up here
+        return redirect("/login") #redirect to page after sign-up here
 
 
     return render_template('parent.html')
@@ -68,9 +67,13 @@ def login():
             return redirect("/parent") #page to go to if login is incorrect
 
         print("login correct")
-        return redirect("/") #page to go to if login is successful
+        return redirect("/home") #page to go to if login is successful
 
     return render_template("login.html")
+
+@app.route("/home", methods =["GET", "POST"])
+def home():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
