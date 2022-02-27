@@ -128,10 +128,10 @@ def home():
 
 @app.route("/supervisors", methods =["GET", "POST"])
 def supervisors():
-
-    file = open("supervisors.txt", "r")
-    supers = file.openlines()
-    file.close()
+    if request.method == "POST":
+        file = open("supervisors.txt", "r")
+        supers = file.openlines()
+        file.close()
 
     return render_template('supervisors.html')
 
