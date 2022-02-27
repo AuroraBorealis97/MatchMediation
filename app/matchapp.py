@@ -6,6 +6,8 @@ registered_users = 'users.txt'
 
 logged_in_user_info = ""
 
+search_filter = ""
+
 #what we type into our browser to go to different pages
 @app.route("/") #home page
 def welcome():
@@ -121,7 +123,22 @@ def home():
 
 @app.route("/resources", methods =["GET", "POST"])
 def resources():
+
+
+
     return render_template('resources.html')
+
+@app.route("/education", methods =["GET", "POST"])
+def education():
+    return render_template('education.html')
+
+@app.route("/custody", methods =["GET", "POST"])
+def custody():
+    return render_template('custody.html')
+
+@app.route("/laws", methods =["GET", "POST"])
+def laws():
+    return render_template('laws.html')
 
 
 if __name__ == '__main__':
