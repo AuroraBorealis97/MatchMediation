@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'open sans', serif;
+}
+
+
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+/*top*/
+
+.circle-1{
+    position: absolute;
+    width: 363px;
+    height: 363px;
+    left: -134px;
+    top: -164px;
+    background: #7271BD;
+    border-radius: 50%;
+}
+
+.circle-2{
+    position: absolute;
+    width: 282.79px;
+    height: 268.65px;
+    left: 1250px;
+    top: 190px;
+    background: #E3CDF9;
+    border-radius: 50%;
+}
+
+.top{
+    width: 100vw;
+    height: 318px;
+    background-color: #B5A5F3;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.title h3{
+    width: 425px;
+    height: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+    margin: 40px auto;
+}
+
+input{
+    width: 478px;
+    height: 57px;
+    background: #F8F8F8;
+    border: 2px solid #CECECE;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 4px 1px rgba(220, 220, 220, 0.29);
+    border-radius: 8px;
+}
+
+div.input{
+    margin: 0 auto;
+    max-width: 478px;
+}
+.select{
+    max-width: 825px;
+    margin: 20px auto 0 auto;
+
+}
+select{
+    width: 271px;
+    height: 52px;
+    background: #F5F5F5;
+    border: 2px solid #B5A5F3;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 4px 1px rgba(220, 220, 220, 0.29);
+    border-radius: 8px;
+    
+}
+
+
+select {
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 29px;
+}
+
+span{
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+/*bottom*/
+
+.bottom{
+    display: flex;
+    justify-content: center;
+}
+
+.bottom div{
+    margin: 5% 0;
+    width: 40%;
+    height: 350px;
+    max-width: 647px;
+    border-radius: 5px;
+}
+
+#box-1{
+    background-color:  #7271BD;
+    margin-right: 20px;
+    width: 100%;
+}
+
+#box-2{
+    background-color: #B5A5F3;
+
+}
+
+.arrow{
+    width: 17.11px;
+    height: 34px;
+    margin-top: 10px;
+  
+     
+}
+
+div.right-align{
+    display: flex;
+    height:  54px;
+    width: 90%;
+    justify-content: end;
+}
+.logo{
+    width: 76px;
+    height: 76px;
+}
+
+div img.logo{
+    width: 76px;
+    margin: 40px auto 40px auto;
+}
+
+
+.bottom h3{
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+height: 100px;
+line-height: 49px;
+text-align: center;
+color: #FFFFFF;
+max-width: 425px;
+margin: 0 auto;
+}

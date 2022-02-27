@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/resources.css">
+    <title>Resources</title>
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    'arvo': ['Arvo', 'serif'],
+                    'open-sans': ['Open Sans', 'sans-serif']
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-open-sans">
+    <header class="flex justify-around py-8 font-light">
+        <h2 class="text-[#4B49AF] font-arvo text-3xl">MatchMediation.</h2>
+        <nav class="flex gap-20 text-2xl">
+            <a href="/home">Home</a>
+            <a href="/supervisors">Find Supervisors</a>
+            <a href="#" class="font-semibold text-[#7271BD]">Resources</a>
+            <a href="/messages">Messages</a>
+            <a href="/profile">Profile</a>
+        </nav>
+    </header>
+    <main>
+        <div class="top">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="title">
+                <h3>View our <span>free</span> resources!</h3>
+            </div>
+            <div class="search">
+                <form action="">
+                  <div class="input">
+                      <input type="search" name="search" id="search" placeholder="Search">
+                    </div>
+                <div class="select">
+                  <select>
+                      <option value="date-posted" disabled selected hidden>Latest First</option>
+                  </select>
+                  <select name="type" id="type">
+                      <option value="post-type" disabled selected hidden>Post Type</option>
+                  </select>
+                  <select name="audience" id="audience">
+                      <option value="audience" disabled selected hidden>Audience</option>
+                  </select>
+                </div><!--select-->
+                </form>
+            </div>
+
+        </div>
+        <div class="bottom">
+            <div id="box-1">
+               <img class="logo" src="../static/images/Vector3.png" alt="logo" />
+                <h3>Illonis Child Custody Laws</h3>
+                <div class="right-align"><a href=""><img class="arrow" src="../static/images/arrow.png" alt="arrow" /></a></div>
+            </div>
+            <div id="box-2">
+                <img class="logo" src="../static/images/Vector1.png" alt="logo" />
+                <h3>Education/Resources</h3>
+                <div class="right-align"><a href=""><img class="arrow" src="../static/images/arrow.png" alt="arrow" srcset="" /></a></div>
+            </div>
+
+        </div>
+    </main>
+    
+</body>
+</html>
+    
+</body>
+</html>
