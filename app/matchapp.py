@@ -4,6 +4,8 @@ app = Flask(__name__) #name of module
 
 registered_users = 'users.txt'
 
+
+
 #what we type into our browser to go to different pages
 @app.route("/") #home page
 def welcome():
@@ -19,7 +21,7 @@ def parent():
         phone = request.form.get("number").replace("-", "")
 
         open_dict ="\'{ "
-        user_info = "\"fname\": \"{}\",\"lname\": \"{}\", \"password\": \"{}\", \"email\": \"{}\",\"phone\": \"{}\"".format(first_name, last_name, password, email, phone)
+        user_info = "\"fname\": \"{}\",\"lname\": \"{}\", \"password\": \"{}\", \"email\": \"{}\",\"phone\": \"{}\", \"acct_type\": \"parent\"".format(first_name, last_name, password, email, phone)
         closing_dict = "}\'\n"
 
         new_user = open_dict + user_info + closing_dict
@@ -34,10 +36,40 @@ def parent():
 
         # for users in registered:
         #     print(users.strip())
-        return redirect("/login") #redirect to page after sign-up here
+        return redirect("/home") #redirect to page after sign-up here
 
 
     return render_template('parent.html')
+
+@app.route("/supervisor", methods =["GET", "POST"])
+def supervisor():
+    if request.method == "POST":
+        first_name = request.form.get("fname")
+        last_name = request.form.get("lname")
+        password = request.form.get("password")
+        email = request.form.get("email")
+        phone = request.form.get("number").replace("-", "")
+
+        open_dict ="\'{ "
+        user_info = "\"fname\": \"{}\",\"lname\": \"{}\", \"password\": \"{}\", \"email\": \"{}\",\"phone\": \"{}\", \"acct_type\": \"supervisor\"".format(first_name, last_name, password, email, phone)
+        closing_dict = "}\'\n"
+
+        new_user = open_dict + user_info + closing_dict
+
+        #print(new_user)
+
+        file = open(registered_users, 'a+')
+        file.write(new_user)
+        file.seek(0)
+        registered = file.readlines()
+        file.close()
+
+        # for users in registered:
+        #     print(users.strip())
+        print("supervisor 1st part added successfully")
+        return redirect("/home") #redirect to page after sign-up here
+
+    return render_template('supervisor.html')
 
 @app.route("/login", methods =["GET", "POST"])
 def login():
@@ -64,7 +96,7 @@ def login():
         file.close()
         if exists == False:
             print("login incorrect")
-            return redirect("/parent") #page to go to if login is incorrect
+            return redirect("/login") #page to go to if login is incorrect
 
         print("login correct")
         return redirect("/home") #page to go to if login is successful
@@ -78,6 +110,7 @@ def home():
 @app.route("/resources", methods =["GET", "POST"])
 def resources():
     return render_template('resources.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
